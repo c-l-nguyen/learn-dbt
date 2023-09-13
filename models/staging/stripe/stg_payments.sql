@@ -6,4 +6,4 @@ select
     -- amount is stored in cents so convert to dollars
     amount / 100 as amount,
     created as created_at
-from {{ source('dbt_tutorial', 'stripe_payment') }}
+from {{ source('stripe', 'payments') }}

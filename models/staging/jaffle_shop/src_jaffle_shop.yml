@@ -1,9 +1,10 @@
 version: 2
 
 sources:
-  - name: dbt_tutorial
+  - name: jaffle_shop
     description: A clone of a Postgres application database.
-    database: dbt-training-314601
+    database: dbt-fundamentals-382622
+    schema: jaffle_shop
     tables:
       - name: customers
         description: Raw customers data.
