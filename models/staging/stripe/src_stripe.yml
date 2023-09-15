@@ -15,5 +15,25 @@ sources:
           - name: id
             description: Primary key for payments
             tests:
-              - unique
+              - unique:
+                  config:
+                    severity: error
+                    error_if: ">100"
+                    warn_if: ">10"
               - not_null
+          - name: paymentmethod
+            description: How payment was made
+            tests:
+              - accepted_values:
+                  values: ['credit_card', 'bank_transfer', 'gift_card', 'coupon']
+                  config:
+                    where: "status = 'success'"
+          - name: status
+            description: Status of payment
+            tests:
+              - accepted_values:
+                  values: ['success', 'fail']
+                  config:
+                    limit: 10
+                    store_failures: true
+                    schema: abc_test
