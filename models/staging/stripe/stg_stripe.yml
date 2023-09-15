@@ -3,6 +3,9 @@ version: 2
 models:
     - name: stg_payments
       description: Staged payments from our jaffle shop app.
+      tests:
+      - dbt_utils.expression_is_true:
+          expression: "amount >= 0"
       columns:
         - name: payment_id
           description: The primary key for payments.
@@ -26,6 +29,12 @@ models:
                   - fail
         - name: amount
           description: The amount of money paid for the order. Converted from cents to dollars.
+          tests:
+            - dollars_spent_are_greater_than_zero
+            - dbt_expectations.expect_column_values_to_be_between: 
+                min_value: 0
+                row_condition: "order_id is not null" 
+                strictly: false
         - name: created_at
           description: When record was created.
 
