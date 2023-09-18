@@ -1,3 +1,4 @@
+-- test for Ci that works
 with orders as (
 
     select * from {{ ref('stg_orders') }}
