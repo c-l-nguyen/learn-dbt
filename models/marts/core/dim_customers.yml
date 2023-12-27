@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: dim_customers
+    description: "Dimension model of customers from Jaffle Shop"
+    columns:
+      - name: customer_id
+        description: "Customer ID"
+      - name: first_name
+        description: "First name of customer"
+      - name: last_name
+        description: "Last name of customer"
+      - name: first_order_date
+        description: "First order date of customer"
+      - name: most_recent_order_date
+        description: "The most recent order date of customer"
+      - name: number_of_orders
+        description: "Total number of orders of customer"
+      - name: lifetime_value
+        description: "LTV of customer"
