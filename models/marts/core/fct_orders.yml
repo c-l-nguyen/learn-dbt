@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: fct_orders
+    description: "Fact model of orders from Jaffle Shop"
+    columns:
+      - name: order_id
+        description: "Order ID"
+      - name: customer_id
+        description: "Customer ID"
+      - name: amount
+        description: "Amount of the order"
