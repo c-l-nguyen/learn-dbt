@@ -5,7 +5,19 @@ models:
     columns:
       - name: order_id
         description: "Order ID"
+        meta:
+          metrics:
+            total_order_count:
+              type: count_distinct
       - name: customer_id
         description: "Customer ID"
+        meta:
+          metrics:
+            total_customer_count:
+              type: count_distinct
       - name: amount
         description: "Amount of the order"
+        meta:
+          metrics:
+            total_order_amount:
+              type: sum
