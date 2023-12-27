@@ -5,6 +5,10 @@ models:
     columns:
       - name: customer_id
         description: "Customer ID"
+        meta:
+          metrics:
+            total_customer_count:
+              type: count_distinct
       - name: first_name
         description: "First name of customer"
       - name: last_name
@@ -15,5 +19,13 @@ models:
         description: "The most recent order date of customer"
       - name: number_of_orders
         description: "Total number of orders of customer"
+        meta:
+          metrics:
+            total_order_count:
+              type: sum
       - name: lifetime_value
         description: "LTV of customer"
+        meta:
+          metrics:
+            total_ltv:
+              type: sum
